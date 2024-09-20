@@ -25,16 +25,16 @@ public class MessageServiceImpl implements MessageService {
     public MessageResponse sendMessage(MessageRequest messageRequest) {
 
         Message message = Message.builder()
-                .groupId(groupsDao.findByGroupId(messageRequest.getGroupId()))
-                .userId(usersDao.findByUserId(messageRequest.getUserId()))
+                .groupId(messageRequest.getGroupId())
+                .userId(messageRequest.getUserId())
                 .message(messageRequest.getMessage())
                 .build();
 
         messageDao.save(message);
 
         return MessageResponse.builder()
-                .groupId(message.getGroupId().getId())
-                .userId(message.getUserId().getId())
+                .groupId(messageRequest.getGroupId())
+                .userId(messageRequest.getUserId())
                 .message(message.getMessage())
                 .status("success")
                 .build();

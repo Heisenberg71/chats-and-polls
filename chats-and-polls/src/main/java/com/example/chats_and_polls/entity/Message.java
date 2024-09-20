@@ -21,16 +21,10 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "group_id")
-    private Groups groupId;
+    private Long groupId;
 
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private Users userId;
+    private String userId;
 
-    @Lob
-    @Column(columnDefinition =  "TEXT")
+    @Column(name = "message", nullable = false)
     private String message;
-
 }
