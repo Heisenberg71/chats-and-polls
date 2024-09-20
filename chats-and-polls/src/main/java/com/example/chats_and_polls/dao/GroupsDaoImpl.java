@@ -20,7 +20,7 @@ public class GroupsDaoImpl implements GroupsDao {
     }
 
     @Override
-    public Groups finByGroupId(Long groupId) {
+    public Groups findByGroupId(Long groupId) {
 
         return groupsRepository.findById(groupId).orElse(null);
     }

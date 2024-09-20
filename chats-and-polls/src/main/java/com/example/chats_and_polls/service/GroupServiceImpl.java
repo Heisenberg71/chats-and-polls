@@ -66,7 +66,7 @@ public class GroupServiceImpl implements GroupService {
     public void joinGroup(String userId, Long groupId) {
 
         Users users = usersDao.findByUserId(userId);
-        Groups groups = groupsDao.finByGroupId(groupId);
+        Groups groups = groupsDao.findByGroupId(groupId);
 
         users.getGroups().add(groups);
         usersDao.save(users);

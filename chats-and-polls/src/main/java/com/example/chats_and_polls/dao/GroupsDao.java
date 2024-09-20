@@ -6,5 +6,5 @@ public interface GroupsDao {
 
     Groups save(Groups groups);
 
-    Groups finByGroupId(Long groupId);
+    Groups findByGroupId(Long groupId);
 }
