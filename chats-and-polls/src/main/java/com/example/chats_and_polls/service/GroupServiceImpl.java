@@ -92,5 +92,18 @@ public class GroupServiceImpl implements GroupService {
         return responseList;
     }
 
+    @Override
+    public void leaveGroup(String userId, Long groupId) {
+
+        Users user = usersDao.findByUserId(userId);
+        Groups group = groupsDao.findByGroupId(groupId);
+
+        user.getGroups().remove(group);
+        group.getUsers().remove(user);
+
+        usersDao.save(user);
+        groupsDao.save(group);
+    }
+
 
 }

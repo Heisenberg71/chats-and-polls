@@ -12,4 +12,6 @@ public interface GroupService {
     void joinGroup(String userId, Long groupId);
 
     List<GroupCreationResponse> getGroups(String userId);
+
+    void leaveGroup(String userId, Long groupId);
 }
