@@ -19,4 +19,10 @@ public class OptionDaoImpl implements OptionDao {
     public List<Option> save(List<Option> optionList) {
         return optionRepository.saveAll(optionList);
     }
+
+    @Override
+    public Option getByOptionId(Long optionId) {
+
+        return optionRepository.findById(optionId).get();
+    }
 }

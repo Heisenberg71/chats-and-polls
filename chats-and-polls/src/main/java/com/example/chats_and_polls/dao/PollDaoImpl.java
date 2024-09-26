@@ -18,4 +18,10 @@ public class PollDaoImpl implements PollDao {
 
         return pollRepository.save(poll);
     }
+
+    @Override
+    public Poll getByPollId(Long pollId) {
+
+        return pollRepository.findById(pollId).get();
+    }
 }

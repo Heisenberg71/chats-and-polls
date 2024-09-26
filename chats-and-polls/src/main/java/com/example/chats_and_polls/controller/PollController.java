@@ -1,6 +1,7 @@
 package com.example.chats_and_polls.controller;
 
 import com.example.chats_and_polls.payload.request.PollRequest;
+import com.example.chats_and_polls.payload.request.VoteRequest;
 import com.example.chats_and_polls.service.PollService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,8 +19,14 @@ public class PollController {
     }
 
     @PostMapping("/polls")
-    void create(@RequestBody PollRequest request) {
+    void createPoll(@RequestBody PollRequest request) {
 
         pollService.create(request);
+    }
+
+    @PostMapping("/vote")
+    void castVote(@RequestBody VoteRequest request){
+
+        pollService.castVote(request);
     }
 }

@@ -7,4 +7,6 @@ import java.util.List;
 public interface OptionDao {
 
     List<Option> save(List<Option> optionList);
+
+    Option getByOptionId(Long optionId);
 }
